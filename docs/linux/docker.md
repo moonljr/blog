@@ -3,6 +3,24 @@ title: docker
 ---
 # docker
 
+### 设置docker 开机自启动
+- 查看已启动的服务 `systemctl list-units --type=service`
+- 查看是否设置开机启动 `systemctl list-unit-files | grep enable`
+- 设置开机启动 `systemctl enable docker.service`
+- 关闭开机启动 `systemctl disable docker.service`
+
+### 设置docker容器自动启动
+- 启动时加--restart=always
+
+    > 示例： docker run -tid --name isaler_v0.0.11 -p 8081:8080 --restart=always -v /alidata/iDocker/run/projectImages/isaler/v0.0.11/log:/usr/local/tomcat/logs isaler_v0.0.11
+- 如果已经启动的项目，则使用update更新：` docker update --restart=always isaler_v0.0.11 always后边跟容器的ID 或名称`
+>restart 的值
+> Flag	Description
+>no		不自动重启容器. (默认value)
+>on-failure 	容器发生error而退出(容器退出状态不为0)重启容器
+>unless-stopped 	在容器已经stop掉或Docker stoped/restarted的时候才重启容器
+>always 	在容器已经stop掉或Docker stoped/restarted的时候才重启容器
+
 #### docker常用命令
 
 ```shell
@@ -95,6 +113,7 @@ title: docker
     - ```shell
       systemctl start docker
       ```
+  - 开机自启动 `systemctl enable docker.service`
 
   - 检测是否安装成功
 
