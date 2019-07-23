@@ -12,7 +12,7 @@ module.exports = {
     ] // 增加一个自定义的 favicon(网页标签的图标)
   ],
   serviceWorker: false, // 是否开启 PWA
-  base: "/blog/", // 这是部署到github相关的配置
+  // base: "/blog/", // 这是部署到github相关的配置
   dest: "./blog",
   markdown: {
     lineNumbers: false // 代码块显示行号
