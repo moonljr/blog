@@ -10,5 +10,5 @@ features:
   details: 记录日常学习笔记。
 - title: 个人博客
   details: 记录日常笔记。
-footer: nginx |© 2018-2019 Eru | 沪ICP备19019050号
+footer: nginx |© 2019-2021 Eru | 沪ICP备19019050号
 ---
